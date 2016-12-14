@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11925,7 +11925,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> A high value for 'RM' feature would probably be more worth on a home with less 'RM', as it turns that the house has more space available. Regarding the 'LSTAT' feature, if this value is high than it should indicate that the house is less worth as this is not a noble area. And the last one, 'PTRATIO' is a feature that indicates that as high as this value is, the better will the students handle complex subjects as physics, math and chemistry. So higher values of this ratio turns the house more worth.</p>
+<p><strong>Answer: </strong> A high value for the 'RM' feature wouldn't be a good indicator alone of how worth a hosue is, as according to the plot, there are plenty houses with 5 to 6 rooms priced around US$200k and other with 7 rooms with the same value, although we could agree that if a house has more rooms it probably has a bigger footage. Regarding the 'LSTAT' feature, if this value is high than it should indicate that the house is less worth as this is not a noble area. And the last one, 'PTRATIO' is a feature that indicates that as high as this value is, the better will the students handle complex subjects as physics, math and chemistry. So higher values of this ratio turns the house more worth.</p>
 
 </div>
 </div>
@@ -12055,7 +12055,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> Yes, this model would have sucess as the result for <code>r2_score</code> metric is close to 1 or 100% indicating a chance of 92.3% of success.</p>
+<p><strong>Answer:</strong> Yes, this model would have sucess as the result for the coeffiecient of determination is close to 1 (100%) indicating a chance of 92.3% of success. According to some docs (<a href="http://support.minitab.com/pt-br/minitab/17/topic-library/modeling-statistics/regression-and-correlation/goodness-of-fit-statistics/r-squared/">http://support.minitab.com/pt-br/minitab/17/topic-library/modeling-statistics/regression-and-correlation/goodness-of-fit-statistics/r-squared/</a> and ), R^2 is the percentage of the response variable variation that is explained by a linear model. In general, the higher the R^2, the better the model fits your data.</p>
 
 </div>
 </div>
@@ -13819,7 +13819,7 @@ MzMzaxnfnDIzMzMzMzMzs5b5H9wI4jHDnrvBAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Regarding graph with max_depth equal to 1, both of the training and testing score are getting lower as we are adding more training points, also both of them converge to a low score, this is a high bias (underfitting). So the model won't benefit from adding more training point as it couldn't understand our data, so we should use more features.</p>
+<p><strong>Answer: </strong> Regarding the graph with max_depth equal to 1, both of the training and testing score get into a Plateau state as we are adding more training points, both of them already converge to a low score so this is a high bias error (underfitting). So the model won't benefit from adding more training point as it couldn't understand our data, so we should use more features.</p>
 
 </div>
 </div>
@@ -14662,7 +14662,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Grid search is a technique that searches many times on a subset of different settings of a learning algorithm. It also applies a performance metric, usually cross-validation on the training set[2] or evaluation on a held-out validation set.</p>
+<p><strong>Answer: </strong> Grid search is a technique that searches across all the possible combinations of the parameters that were build on the params dictionary and applying cross-validation on each of these combinations. The CV process is important to measure the combination used and optimizing the learning algorithm. And a negative point is that as it could be more expensive than other learning algorithm because of the CV process applied to all parameters combinations.</p>
 
 </div>
 </div>
@@ -14683,7 +14683,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> k-fold CV training techinique consist of dividing the orginal data into k subsets of equal size, then one of this subset is used as testing data and the other ones (k - 1) are used as training data. Then each of the k subsets are used exactly once as the validation data on the cross-validation process and the k results from the folds can then be averaged to produce a single estimation. The grid search uses the k-fold as a performance metric identifying the accuracy of this model.</p>
+<p><strong>Answer: </strong> k-fold CV training techinique consist of dividing the orginal data into k subsets of equal size, then one of this subset is used as testing data and the other ones (k - 1) are used as training data. Each of the k subsets are used exactly once as the validation data on the cross-validation process and the k results from the folds can then be averaged to produce a single estimation. As the main benefit for using k-fold cv over grid search is that it can reduce the high variance (overfitting) error on the model. This is due to the ability that this techinique to tune the hyperparameters over the the possible combinations.</p>
 
 </div>
 </div>
@@ -14719,7 +14719,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -14738,7 +14738,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)}</span>
 
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
@@ -14781,7 +14781,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -14801,7 +14801,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Parameter &#39;max_depth&#39; is 10 for the optimal model.
+<pre>Parameter &#39;max_depth&#39; is 4 for the optimal model.
 </pre>
 </div>
 </div>
@@ -14815,7 +14815,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The optimal model has the maximum depth of 10. It is very different from what I thought as I should best use a depth of 3 as both training and test score have a good score near 85%.</p>
+<p><strong>Answer: </strong> The optimal model has the maximum depth of 4. It is very close from what I stated before, my choice was that the best use a depth of 3 as both training and test score have a good score near 85%.</p>
 
 </div>
 </div>
@@ -14864,7 +14864,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -14887,9 +14887,9 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predicted selling price for Client 1&#39;s home: $397,950.00
-Predicted selling price for Client 2&#39;s home: $302,400.00
-Predicted selling price for Client 3&#39;s home: $953,400.00
+<pre>Predicted selling price for Client 1&#39;s home: $411,417.39
+Predicted selling price for Client 2&#39;s home: $230,828.57
+Predicted selling price for Client 3&#39;s home: $937,230.00
 </pre>
 </div>
 </div>
@@ -14903,7 +14903,7 @@ Predicted selling price for Client 3&#39;s home: $953,400.00
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I would recommend each client to use the predicted value because the have an validation score close to 75% and most of this houses prices are close to the mean and median prices.</p>
+<p><strong>Answer: </strong> I would recommend the clients to use the predicted values because the model has a validation score close to 85% when we use a decistion tree algorithm with a maximum depth equals to 4. Also, most of these houses prices are close to the mean and median prices calculated on the Data Exploration section, which also could be justified if we subtract or add them from the standard deviation price.</p>
 
 </div>
 </div>
