@@ -14719,7 +14719,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -14744,7 +14744,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create the grid search object</span>
-    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">regressor</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">scoring_fnc</span><span class="p">)</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">regressor</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring_fnc</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv_sets</span><span class="p">)</span>
 
     <span class="c1"># Fit the grid search object to the data to compute the optimal model</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -14781,7 +14781,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -14801,7 +14801,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Parameter &#39;max_depth&#39; is 4 for the optimal model.
+<pre>Parameter &#39;max_depth&#39; is 6 for the optimal model.
 </pre>
 </div>
 </div>
@@ -14815,7 +14815,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The optimal model has the maximum depth of 4. It is very close from what I stated before, my choice was that the best use a depth of 3 as both training and test score have a good score near 85%.</p>
+<p><strong>Answer: </strong> The optimal model has the maximum depth of 6. It is very close from what I stated before, my choice was that the best use a depth of 3 as both training and test score have a good score near 80%, it is close to what I answered on Question 6 but the max_depth = 6 has a better training score (around 95%) and a good test score near 80%.</p>
 
 </div>
 </div>
@@ -14864,7 +14864,7 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -14872,9 +14872,17 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
                <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span> <span class="c1"># Client 2</span>
                <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>  <span class="c1"># Client 3</span>
 
+<span class="n">compare_data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="c1"># Compare Client 1</span>
+               <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span>  <span class="c1"># Compare Client 2</span>
+               <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">]]</span>   <span class="c1"># Compare Client 3</span>
+
 <span class="c1"># Show predictions</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">price</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">client_data</span><span class="p">)):</span>
     <span class="k">print</span> <span class="s2">&quot;Predicted selling price for Client {}&#39;s home: ${:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+    
+<span class="c1"># Show predictions comparison</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">price</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">compare_data</span><span class="p">)):</span>
+    <span class="k">print</span> <span class="s2">&quot;Predicted selling price for Compare Client {}&#39;s home: ${:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14887,9 +14895,12 @@ zAqYkzUzMzOzAuZkzczMzKyAOVkzMzMzK2BO1szMzMwKmJM1MzMzswLmZM3MzMysgP0/izDJGf2f
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predicted selling price for Client 1&#39;s home: $411,417.39
-Predicted selling price for Client 2&#39;s home: $230,828.57
-Predicted selling price for Client 3&#39;s home: $937,230.00
+<pre>Predicted selling price for Client 1&#39;s home: $424,935.00
+Predicted selling price for Client 2&#39;s home: $284,200.00
+Predicted selling price for Client 3&#39;s home: $933,975.00
+Predicted selling price for Compare Client 1&#39;s home: $315,000.00
+Predicted selling price for Compare Client 2&#39;s home: $284,200.00
+Predicted selling price for Compare Client 3&#39;s home: $577,500.00
 </pre>
 </div>
 </div>
@@ -14903,7 +14914,7 @@ Predicted selling price for Client 3&#39;s home: $937,230.00
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I would recommend the clients to use the predicted values because the model has a validation score close to 85% when we use a decistion tree algorithm with a maximum depth equals to 4. Also, most of these houses prices are close to the mean and median prices calculated on the Data Exploration section, which also could be justified if we subtract or add them from the standard deviation price.</p>
+<p><strong>Answer: </strong> After thinking of how this model is not predicting well the house prices, I wouldn't recommend it to any client. I've placed some compare prices for all the three clients and as we can see how poor were the predictions. As an example, on the 'Compare Client 1', I increased the RM to 8 and the house price got a lower price as compared to a 5 RM house.</p>
 
 </div>
 </div>
@@ -14920,7 +14931,7 @@ Predicted selling price for Client 3&#39;s home: $937,230.00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">vs</span><span class="o">.</span><span class="n">PredictTrials</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">fit_model</span><span class="p">,</span> <span class="n">client_data</span><span class="p">)</span>
@@ -14936,18 +14947,18 @@ Predicted selling price for Client 3&#39;s home: $937,230.00
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Trial 1: $407,400.00
-Trial 2: $397,950.00
-Trial 3: $405,825.00
-Trial 4: $367,500.00
-Trial 5: $396,480.00
-Trial 6: $435,600.00
-Trial 7: $367,500.00
-Trial 8: $437,220.00
-Trial 9: $405,825.00
-Trial 10: $393,750.00
+<pre>Trial 1: $391,183.33
+Trial 2: $424,935.00
+Trial 3: $415,800.00
+Trial 4: $420,622.22
+Trial 5: $418,377.27
+Trial 6: $411,931.58
+Trial 7: $399,663.16
+Trial 8: $407,232.00
+Trial 9: $351,577.61
+Trial 10: $413,700.00
 
-Range in prices: $69,720.00
+Range in prices: $73,357.39
 </pre>
 </div>
 </div>
@@ -14979,7 +14990,7 @@ Range in prices: $69,720.00
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> Regarding this model on a real-world setting, I don't think that it could make effiecient predictions, it must use more features as neighborhood, if it has a laundry room and how energy effiecient it is. Also the age of the building should be used as a feature. All of those features could highly affect the price of the house.</p>
-<p>About the data collected from 1978, it is not relevant to predict nowadays answers as the house prices increased a lot from that time. And I don't see a model collected on an urban city that could be used on a rural city because the features are totaly different and can influence trully on the price.</p>
+<p>About the data collected from 1978, this is not useful because the prices increased a lot from that time, and even zones change a lot. If I compare it to my city (São Paulo), the central area there . And I don't see a model collected on an urban city that could be used on a rural city because the features are totaly different and can influence trully on the price.</p>
 
 </div>
 </div>
